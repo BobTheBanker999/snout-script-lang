@@ -1,0 +1,32 @@
+; constant variables
+set five 5
+set yes y
+set no n
+
+; basic hello world
+out Hello, World!
+
+; adds five to the number you input
+set inres ~
+set res ~
+inp pick a number inres
+vout inres
+nl
+add inres five res
+if == inres five out this is easy math!
+vout res
+nl
+
+; echo function
+set echo ~
+inp enter some words echo
+vout echo
+nl
+
+; quit check
+set quit ~
+inp want to quit y/n quit
+if == quit yes end
+
+; repeat from line
+goto 9

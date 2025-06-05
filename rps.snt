@@ -1,0 +1,38 @@
+; Rock, Paper, Scissors
+set rck r
+set ppr p
+set sci s
+set plr ~
+set cpu ~
+set won t
+set yes y
+set no n
+set tie t
+set score 0
+
+out welcome to rock, paper, scissors!
+
+; loop starts here
+
+inp enter r, p, or s: plr
+rnd r p s cpu
+
+if == cpu plr set won t
+if == cpu rck if == plr sci set won n
+if == cpu ppr if == plr rck set won n
+if == cpu sci if == plr ppr set won n
+if == plr rck if == cpu sci set won y
+if == plr ppr if == cpu rck set won y
+if == plr sci if == cpu ppr set won y
+
+; attempt at multiline if
+if == won yes out you won :)
+if == won yes inc score
+if == won no out you lost :(
+if == won no dec score
+if == won tie out it was a tie.
+
+vout score
+out < Your Score
+
+goto 15

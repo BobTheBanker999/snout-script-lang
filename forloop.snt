@@ -1,0 +1,8 @@
+set count 0
+set limit 5
+
+inc count
+vout count
+
+if < count limit goto 3
+; keep looping if count is less than limit
